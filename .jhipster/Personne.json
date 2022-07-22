@@ -1,0 +1,33 @@
+{
+  "changelogDate": "20220722095842",
+  "databaseType": "mongodb",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "prenom",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique", "minlength", "maxlength", "pattern"],
+      "fieldValidateRulesMaxlength": "30",
+      "fieldValidateRulesMinlength": "4",
+      "fieldValidateRulesPattern": "^[a-zA-Z0-9]*$"
+    },
+    {
+      "fieldName": "nom",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "35",
+      "fieldValidateRulesMinlength": "4"
+    },
+    {
+      "fieldName": "telephone",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required", "unique", "max"],
+      "fieldValidateRulesMax": "12"
+    }
+  ],
+  "name": "Personne",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

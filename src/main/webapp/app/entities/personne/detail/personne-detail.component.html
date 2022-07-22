@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="personne">
+      <h2 data-cy="personneDetailsHeading"><span jhiTranslate="myApp1App.personne.detail.title">Personne</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ personne.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp1App.personne.prenom">Prenom</span></dt>
+        <dd>
+          <span>{{ personne.prenom }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp1App.personne.nom">Nom</span></dt>
+        <dd>
+          <span>{{ personne.nom }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp1App.personne.telephone">Telephone</span></dt>
+        <dd>
+          <span>{{ personne.telephone }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/personne', personne.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
